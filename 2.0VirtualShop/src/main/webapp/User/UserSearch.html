@@ -15,7 +15,7 @@
 	media="all" />
 <link rel="shortcut icon" href="pp2.jpg">
 <script>
-	function search() {
+	function sendData() {
 		var sUser = document.getElementById("txtIDcard").value.trim();
 		if (sUser.trim() == "") {
 			sUser = "null";
@@ -108,13 +108,17 @@
 	<br></br>
 	<br></br>
 	<center>
-		<a href="#" class="button" onclick="search()">Consultar</a>
+		<a href="#" class="button" onclick="sendData()">Consultar</a>
+		<br></br>
+		<label id="confirmation"></label>
 	</center>
 	<br></br>
 	<center>
 		<a href="#" class="button2"
 			onclick="location.href='/TiendaVirtualNewYork/User/Menu.html'">Menú
 			Usuario</a>
+			<br></br>
+			<div id="dvResult"></div>
 	</center>
 	<!--  <center>
 			<button class="button" onclick="search()">Consultar</button>
