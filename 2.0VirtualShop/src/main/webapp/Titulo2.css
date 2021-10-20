@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+
+h1{
+	display: inline-block;
+	position: relative;
+	color: #00FFD8;
+	font-family: 'Fredoka One', cursive;
+}
+
+h1:after::before{
+	content:'';
+	position: absolute;
+	width: 120px;
+	height: 3px;
+	background-color: currentColor;
+	top: 0.6em;
+	transform:scale(0);
+	transition: all 0.2s ease-in;
+}
+
+h1:hover::before, h1:hover::after{
+	transform:scale(1);
+}
+
+h1::before{
+	left:-140px;
+}
+h1::after{
+	right:-140px;
+}

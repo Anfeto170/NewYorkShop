@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registro de Usuarios</title>
+<link rel="stylesheet" href="/TiendaVirtualNewYork/Titulo3.css"
+	media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/TituloHumo7.css"
+	media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/F7.css" media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/Botones.css"
+	media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/EstiloTabla6.css"
+	media="all" />
+<link rel="shortcut icon" href="pp2.jpg">
+<script>
+	function validarEmail(valor) {
+		if (/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
+				.test(valor)) {
+			alert("La dirección de email " + valor + " es correcta.");
+			return true;
+		} else {
+			alert("No se introdujo ninguna dirección de email o es incorrecta.");
+			return false;
+		}
+	}
+	function sendData() {
+		var email = validarEmail(document.getElementById("txtEmail").value
+				.trim());
+		var valido = validate();
+		if (valido) {
+			alert("Los datos son válidos")
+
+			var IDcard = document.getElementById("txtIDcard").value.trim();
+			var Name = null;
+			var Email = document.getElementById("txtEmail").value.trim();
+			var User = null;
+			var Password = document.getElementById("txtPassword").value.trim();
+
+			var Delivery = new XMLHttpRequest();
+
+			var url = '/TiendaVirtualNewYork/ModifyUser';
+			var Parameters = "IDcard=" + IDcard + "&" + "Name=" + Name + "&"
+					+ "Email=" + Email + "&" + "User=" + User + "&"
+					+ "Password=" + Password;
+			alert("Se enviaron los datos")
+
+			Delivery.open('POST', url, true);
+
+			//Send the proper header information along with the request
+			Delivery.setRequestHeader('Content-type',
+					'application/x-www-form-urlencoded');
+
+			Delivery.onreadystatechange = function() {//Call a function when the state changes.
+				if (Delivery.readyState == 4 && Delivery.status == 200) {
+					// Lanza una alerta de que se mandaron los datos
+					// alert(Delivery.responseText);
+					var myDiv = document.getElementById("dvTabla");
+					myDiv.innerHTML = "<b>" + Delivery.responseText + "</b>";
+				}
+			}
+			Delivery.send(Parameters);
+
+		} else {
+			alert("Los datos no son válidos")
+		}
+		return;
+	}
+
+	function validate() {
+		var txtPassword = document.getElementById("txtPassword");
+		var txtIDcard = document.getElementById("txtIDcard");
+
+		if (txtPassword.value.length == 0 | txtIDcard.value.length == 0) {
+			alert("La cédula & contraseña deben ser cambios a cambiar")
+			return false;
+		}
+
+		else {
+			return true;
+		}
+	}
+</script>
+</head>
+<body>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<div align="center">
+		<br></br>
+		<h1>Sección modificar usuarios</h1>
+		<br></br> <br></br> <br></br> <br></br>
+		<!--  El método post, hace que se ejectu get pero no muestra nada en URL -->
+		<label for="txtIDcard">Cédula: </label> <input type="number"
+			class="fondo" id="txtIDcard" name="IDcard"> <br> <br>
+
+		<label for="txtEmail">Email: </label> <input type="email"
+			class="fondo2" id="txtEmail" name="Email"> <br> <br>
+
+		<label for="txtPassword">Contraseña: </label> <input type="password"
+			class="fondo4" id="txtPassword" name="Password"> <br></br> <br></br>
+		<br></br>
+		<center>
+			<a href="#" class="button2" onclick="sendData()">Validar para
+				guardar</a>
+		</center>
+		<br></br> <br></br>
+		<center>
+			<a href="#" class="button"
+				onclick="location.href='/TiendaVirtualNewYork/User/Menu.html'">Menú
+				Usuario</a>
+		</center>
+
+
+	</div>
+	<link rel="stylesheet" href="/TiendaVirtualNewYork/Designxd.css"
+		media="all" />
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css'
+		rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</body>
+</html>

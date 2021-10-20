@@ -1,0 +1,51 @@
+.btnEffect5{
+	width: 190px;
+	padding: 20px;
+	background-color: transparent;
+	border: 1.5px solid transparent;
+	color: #FFF700;
+	border-radius: 4px;
+	text-transform: uppercase;
+	transition: all 0.3s;
+	position: relative;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.btnEffect5:after{
+	content: "";
+	width: 20px;
+	height: 20px;
+	border-top: 1.5px solid #FFF700;
+	border-left: 1.5px solid #FFF700;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	transition: all 0.2s;
+}
+
+.btnEffect5:before{
+	content: "";
+	width: 20px;
+	height: 20px;
+	border-bottom: 1.5px solid FF00E4;
+	border-right: 1.5px solid #FFF700;
+	position: absolute;
+	left: -1;
+	right: 0;
+	bottom: -1;
+	top: -1;
+	transition: all 0.2s;
+}
+
+.btnEffect5:hover:after{
+	width: 201px;
+	height: 70px;
+}
+
+.btnEffect5:hover:before{
+	width: 201px;
+	height: 70px;
+}

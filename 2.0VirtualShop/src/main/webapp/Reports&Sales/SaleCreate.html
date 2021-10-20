@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registro de Ventas</title>
+<link rel="stylesheet" href="/TiendaVirtualNewYork/F7.css" media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/Titulo4.css" media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/Formulario2.css" media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/TituloHumo7.css" media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/calendar3.css" />
+<link rel="shortcut icon" href="pp2.jpg">
+
+
+<script>
+	function consultarCliente() {
+		var card = document.getElementById("txtIDcard").value.trim();
+		if (card.trim() == "") {
+			card = "null";
+		}
+		var http = new XMLHttpRequest();
+		var url = '/TiendaVirtualNewYork/ListCostumer';
+		var params = "card=" + card;
+		http.open('POST', url, true);
+
+		//Send the proper header information along with the request
+		http.setRequestHeader('Content-type',
+				'application/x-www-form-urlencoded');
+
+		http.onreadystatechange = function() {//Call a function when the state changes.
+			if (http.readyState == 4 && http.status == 200) {
+
+				var datos = http.responseText;
+				datos = datos.replace('[', '').replace(']', '');
+				datos = datos.replace('"', '').replace('"', '');
+
+				alert(datos);
+
+				document.getElementById("lbCliente").innerText = datos;
+			}
+		}
+		http.send(params);
+	}
+
+	function consultarProducto() {
+		var http = new XMLHttpRequest();
+		var url = '/TiendaVirtualNewYork/ListSales';
+		var params = "";
+		http.open('POST', url, true);
+
+		//Send the proper header information along with the request
+		http.setRequestHeader('Content-type',
+				'application/x-www-form-urlencoded');
+
+		http.onreadystatechange = function() {//Call a function when the state changes.
+			if (http.readyState == 4 && http.status == 200) {
+
+				// alert(http.responseText);
+				var select = document.getElementById("sltProducts");
+
+				//CreateTableFromJSON(http.responseText);
+
+				var datos = http.responseText;
+				datos = datos.replace('[', '').replace(']', '');
+				var tokens = datos.split(',');
+				for (var i = 0; i < tokens.length; i++) {
+					var tokens2 = tokens[i].split(';');
+					var id = (tokens2[0].replace('"', ''));
+					var name = (tokens2[1].replace('"', ''));
+					var price = (tokens2[2].replace('"', ''));
+
+					var el = document.createElement("option");
+					el.text = name + ":" + price;
+					el.value = id;
+
+					select.add(el);
+				}
+			}
+		}
+		http.send(params);
+	}
+
+	function validateFields() {
+		if (document.getElementById("txtIDcard").value.trim().length == 0
+				| document.getElementById("start").value.trim().length == 0
+				| document.getElementById("sltProducts").value.trim().length == 0
+				| document.getElementById("txtCantidad").value.trim().length == 0) {
+			alert("Los datos de cliente, fecha y una compra deben ser requeridos.");
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	function sendData() {
+		if (!validateFields()) {
+			alert("No se");
+			return;
+		} else {
+			var IdCostumer = document.getElementById("txtIDcard").value.trim();
+			var Date = document.getElementById("start").value.trim();
+			var IdProduct = document.getElementById("sltProducts").value.trim();
+			var Amount = document.getElementById("txtCantidad").value.trim();
+			var Tprice = parseFloat(document.getElementById("lblTotal").innerHTML);
+
+			alert(IdCostumer + Date + IdProduct + Amount + Tprice)
+
+			var http = new XMLHttpRequest();
+			var url = '/TiendaVirtualNewYork/CreateSale';
+			var params = "NIT_cliente=" + IdCostumer + "&" + "Codigo_producto="
+					+ IdProduct + "&" + "cantidad=" + Amount + "&" + "Total="
+					+ Tprice + "&" + "Fecha=" + Date;
+			http.open('POST', url, true);
+
+			//Send the proper header information along with the request
+			http.setRequestHeader('Content-type',
+					'application/x-www-form-urlencoded');
+
+			http.onreadystatechange = function() {//Call a function when the state changes.
+				if (http.readyState == 4 && http.status == 200) {
+					alert(http.responseText);
+				}
+			}
+			http.send(params);
+		}
+	}
+
+	function updatePrice() {
+		var select = document.getElementById("sltProducts");
+		var unidades = document.getElementById("txtCantidad");
+		var price = select.options[select.selectedIndex].text.split(":")[1];
+		// alert(select.options[select.selectedIndex].text);
+
+		//alert(price);
+		//alert(unidades.value);
+		//var Total = parseFloat(price, 2) * parseFloat(unidades.value, 2);
+		//document.getElementById("lblTotal").innerText = Total;
+	}
+
+	function totales() {
+		var select = document.getElementById("sltProducts");
+		var unidades = document.getElementById("txtCantidad");
+		var price = select.options[select.selectedIndex].text.split(":")[1];
+		var Subtotal = parseFloat(price, 2) * parseFloat(unidades.value, 2);
+		var IVA = Subtotal * 0.19;
+		var Total = IVA + Subtotal;
+
+		document.getElementById("lblTotal").innerText = Subtotal;
+		document.getElementById("IVA").innerText = IVA;
+		document.getElementById("lblTOTAL").innerText = Total;
+
+	}
+</script>
+</head>
+<body onload="consultarProducto()">
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+	<center>
+    <h1 class="lines-effect">Registar Factura</h1>
+    </center>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<div>
+		<center>
+			<label for="txtIDcard">Cédula:</label><input type="number" class="fondo3" id="txtIDcard" name="PurchasePrice"></td>
+			&nbsp;&nbsp; &nbsp;&nbsp; 
+			<button class="button2" onclick="consultarCliente()">Consultar</button>
+		</center>	
+		&nbsp;&nbsp; &nbsp;&nbsp; 
+	</div>	
+<div>
+	<div class="calendar">
+    <div class="calendar__info">
+        <div class="calendar__prev" id="prev-month">&#9664;</div>
+        <div class="calendar__month" id="month"></div>
+        <div class="calendar__year" id="year"></div>
+        <div class="calendar__next" id="next-month">&#9654;</div>
+    </div>
+
+    <div class="calendar__week">
+        <div class="calendar__day calendar__item">Lun</div>
+        <div class="calendar__day calendar__item">Mar</div>
+        <div class="calendar__day calendar__item">Mie</div>
+        <div class="calendar__day calendar__item">Jue</div>
+        <div class="calendar__day calendar__item">Vie</div>
+        <div class="calendar__day calendar__item">Sab</div>
+        <div class="calendar__day calendar__item">Dom</div>
+    </div>
+
+    <div class="calendar__dates" id="dates"></div>
+</div>
+
+<script src="js/scripts.js"></script>
+</body>
+
+<script> 
+let monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre','Octubre', 'Noviembre', 'Diciembre'];
+
+let currentDate = new Date();
+let currentDay = currentDate.getDate();
+let monthNumber = currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
+
+let dates = document.getElementById('dates');
+let month = document.getElementById('month');
+let year = document.getElementById('year');
+
+let prevMonthDOM = document.getElementById('prev-month');
+let nextMonthDOM = document.getElementById('next-month');
+
+month.textContent = monthNames[monthNumber];
+year.textContent = currentYear.toString();
+
+prevMonthDOM.addEventListener('click', ()=>lastMonth());
+nextMonthDOM.addEventListener('click', ()=>nextMonth());
+
+
+
+const writeMonth = (month) => {
+
+    for(let i = startDay(); i>0;i--){
+        dates.innerHTML += ` <div class="calendar__date calendar__item calendar__last-days">
+            ${getTotalDays(monthNumber-1)-(i-1)}
+        </div>`;
+    }
+
+    for(let i=1; i<=getTotalDays(month); i++){
+        if(i===currentDay) {
+            dates.innerHTML += ` <div class="calendar__date calendar__item calendar__today">${i}</div>`;
+        }else{
+            dates.innerHTML += ` <div class="calendar__date calendar__item">${i}</div>`;
+        }
+    }
+}
+
+const getTotalDays = month => {
+    if(month === -1) month = 11;
+
+    if (month == 0 || month == 2 || month == 4 || month == 6 || month == 7 || month == 9 || month == 11) {
+        return  31;
+
+    } else if (month == 3 || month == 5 || month == 8 || month == 10) {
+        return 30;
+
+    } else {
+
+        return isLeap() ? 29:28;
+    }
+}
+
+const isLeap = () => {
+    return ((currentYear % 100 !==0) && (currentYear % 4 === 0) || (currentYear % 400 === 0));
+}
+
+const startDay = () => {
+    let start = new Date(currentYear, monthNumber, 1);
+    return ((start.getDay()-1) === -1) ? 6 : start.getDay()-1;
+}
+
+const lastMonth = () => {
+    if(monthNumber !== 0){
+        monthNumber--;
+    }else{
+        monthNumber = 11;
+        currentYear--;
+    }
+
+    setNewDate();
+}
+
+const nextMonth = () => {
+    if(monthNumber !== 11){
+        monthNumber++;
+    }else{
+        monthNumber = 0;
+        currentYear++;
+    }
+
+    setNewDate();
+}
+
+const setNewDate = () => {
+    currentDate.setFullYear(currentYear,monthNumber,currentDay);
+    month.textContent = monthNames[monthNumber];
+    year.textContent = currentYear.toString();
+    dates.textContent = '';
+    writeMonth(monthNumber);
+}
+
+writeMonth(monthNumber); 
+
+</script>
+		<br></br>
+    	<br></br>		
+			<td>Nombre:</td>
+			<td><label id="lbCliente"></label></td>
+			<td><div>&nbsp;&nbsp; | &nbsp;&nbsp;</div></td>
+			<td><label for="start">Fecha:</label></td>
+			<td><input type="date" id="start" name="trip-start"
+				value="2021-10-15" min="2021-01-01" max="2118-12-31"></td>
+		<br></br>
+    	<br></br>	
+	
+	<br>
+	<br>
+	<table>
+		<tr>
+		<center>
+			<td>Cod. Producto</td>
+			<td>Cantidad</td>
+			<td>Valor Total</td>
+		</center>	
+
+		</tr>
+
+		<tr>
+
+			<td><select id="sltProducts" onchange="updatePrice()"></select>
+			<td><input type="number" class="fondo3" id="txtCantidad"
+				name="PurchasePrice"></td>
+			<td><label id="lblTotal"></label></td>
+
+		</tr>
+		<tr></tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td><label id="IVA"></label></td>
+			<td>
+				<button onclick="totales()" class="btnEffect1">Calcular
+					Total</button>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td><label id="lblTOTAL"></label></td>
+			<td>
+		</tr>
+
+	</table>
+	<br></br>
+	<button onclick="sendData()" class="btnEffect1">Enviar Datos</button>
+	<br></br>
+	<button
+		onclick="location.href='/TiendaVirtualNewYork/Reports&Sales/Menu.html'"
+		class="btnEffect3">Reportes &amp; Ventas</button>
+	</center>
+</body>
+</html>

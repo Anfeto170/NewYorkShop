@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+body{
+	align-items: center;
+}
+
+.fondo{
+	background-color: white;
+	width : 200px; 
+	height : 30px;
+	border: none;
+	align-items: center;
+}
+
+.fondo1{
+	background-color:white;
+	width : 200px; 
+	height : 30px;
+	border: none;
+	align-items: center;
+}
+
+.fondo2{
+	background-color: white;
+	width : 200px; 
+	height : 30px;
+	border: none;
+	align-items: center;
+}
+
+.fondo3{
+	background-color: white;
+	width : 200px; 
+	height : 30px;
+	border: none;
+	align-items: center;
+}
+
+.fondo4{
+	background-color: white;
+	width : 200px; 
+	height : 30px;
+	border: none;
+	align-items: center;
+}
+
+.fondo5{
+	background-color: white;
+	width : 200px; 
+	height : 30px;
+	border: none;
+	align-items: center;
+}
+
+
+label {
+    font-size: 25px;
+    COLOR: #CD69FF;
+    font-family: "Fredoka One";
+}

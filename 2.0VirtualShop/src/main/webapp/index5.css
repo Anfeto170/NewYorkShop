@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+
+body {
+	background: url('/TiendaVirtualApp/Costumer/26Fondos.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
