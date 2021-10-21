@@ -21,7 +21,7 @@ public class VentasDAO {
 							+ ven.getNIT_cliente() + "', '" + ven.getCodigo_producto() + "', " + ven.getCantidad()
 							+ ", " + ven.getTotal() + ", '" + ven.getFecha() + "')");
 			estatuto.close();
-			confirmation = "Factura creada con �xito";
+			confirmation = "Factura creada con exito";
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -134,3 +134,4 @@ public class VentasDAO {
 		return registros;
 	}
 }
+
