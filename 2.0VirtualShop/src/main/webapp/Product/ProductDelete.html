@@ -106,56 +106,66 @@
 			<i class='bx bx-menu' id="btn" ></i>
 		</div>	
 		<ul class="nav_list">
-			<li><a href="#"> <i class='bx bx-food-menu'></i> <span
-				class="links_name">Opciones Para:</span>
-		</a> <!-- <span class="tooltip">Mis Archivos</span>   --></li>
-		<li><a href="#"> <i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/Menu.html'" class='bx bx-user'></i> <span
-				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/Menu.html'"
-				class="links_name">Usuarios</span>
-		</a> <span class="tooltip">Usuarios</span></li>
-		<li><a hreh="#"> <i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Costumer/Menu.html'" class='bx bx-group'></i> <span
-				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Costumer/Menu.html'"
-				class="links_name">Clientes</span>
-		</a> <span class="tooltip">Clientes</span></li>
-		<li><a hreh="#"> <i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Supplier/Menu.html'" class='bx bx-briefcase'></i> <span
-				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Supplier/Menu.html'"
-				class="links_name">Proveedores</span>
-		</a> <span class="tooltip">Proveedores</span></li>
-		<li><a hreh="#"> <i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Product/Menu.html'" class='bx bx-gift'></i> <span
-				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Product/Menu.html'"
-				class="links_name">Productos</span>
-		</a> <span class="tooltip">Productos</span></li>
-		<li><a hreh="#"> <i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Reports&Sales/Menu.html'" class='bx bx-bar-chart-alt-2'></i> <span
-				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Reports&Sales/Menu.html'" class="links_name">Reportes & Ventas</span>
-		</a> <span class="tooltip">Estadisticas</span></li>
-	<!--  <button  onclick="sendData()"   >Eliminar Product</button>
-	<br></br>
-	<br></br>
-	<br></br>
-	<br></br>
-<input type='button' onclick="location.href='/TiendaVirtualNewYork/Product/Menu.html'" value='Menï¿½ Producto' style='width:250px; height:50px; background-color: #FF5555; border: none; color: white; padding: 16px 32px; text-decoration: none; margin: 4px 2px; cursor: pointer'' >
-	<br>
-	<br>
-	<div id="dvTabla"></div>
-</center>-->
-<div class="profile_content">
+			<li>
+				<a href="#">
+					<i class='bx bx-food-menu'></i>
+					<span class="links_name">Opciones Para:</span>
+				</a>
+				 <span class="tooltip">Mis Archivos</span>   
+			 </li>
+			<li>
+				<a href="#">
+					<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/Menu.html'" class='bx bx-user'></i>
+					<span onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/Menu.html'" class="links_name">Usuarios</span>
+				</a>
+				 <span class="tooltip">Usuarios</span>  
+			</li>
+			<li>
+				<a hreh="#">
+					<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Costumer/Menu.html'" class='bx bx-group'></i>
+					<span onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Costumer/Menu.html'" class="links_name">Clientes</span>
+				</a>
+				 <span class="tooltip">Clientes</span>  
+			</li>
+			<li>
+				<a hreh="#">
+					<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Supplier/Menu.html'" class='bx bx-briefcase' ></i>					
+					<span onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Supplier/Menu.html'" class="links_name">Proveedores</span>
+				</a>
+				 <span class="tooltip">Proveedores</span>  
+			</li>
+			<li>
+				<a hreh="#">
+					<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Product/Menu.html'" class='bx bx-gift' ></i>
+					<span onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Product/Menu.html'" class="links_name">Productos</span>
+				</a>
+				 <span class="tooltip">Productos</span>  
+			</li>
+			<li>
+			<a hreh="#"> 
+				<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Reports&Sales/Menu.html'" class='bx bx-bar-chart-alt-2'></i> 
+				<span onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Reports&Sales/Menu.html'" class="links_name">Reportes & Ventas</span>
+			</a> 
+				<span class="tooltip">Estadisticas</span></li>
+				<div class="profile_content">
 			<div class="profile">
 				<div class="profile_details">
 					<div class="name_job">
-						<img src="pp.jpg" alt="">
+					<img src="pp.jpg" alt="">
 						<div class="name">Juan López</div>
 						<div class="job">Diseño Web</div>
 					</div>
 				</div>
-				<i class='bx bx-log-out' id="log_out"></i>
+				<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/LoginVista.html'" class='bx bx-log-out' id="log_out" ></i>
+				<span class="tooltip">Salir</span></li>
 			</div>
 		</div>
-</div>
-<div class="home_content">
-	<div class="text"></div>
-</div>
-
-<script>
+	</div>
+	<div class="home_content">
+		<div class="text"></div>
+	</div>
+	
+	<script>
 	let btn = document.querySelector("#btn");
 	let sidebar = document.querySelector(".sidebar");
 	let searchBtn = document.querySelector(".bx-search");
