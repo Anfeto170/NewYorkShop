@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
 body{
 	margin: 0;
 	padding: 0;
@@ -19,6 +21,7 @@ body{
 	animation: pulse 1.5s infinite;
 	width:200px;
 	height:30px;
+	font-family: 'Fredoka One', cursive;
 }
 
 @keyframes pulse{
@@ -52,6 +55,7 @@ body{
 	animation: pulse 1.5s infinite;
 	width:200px;
 	height:30px;
+	font-family: 'Fredoka One', cursive;
 }
 
 @keyframes pulse{
