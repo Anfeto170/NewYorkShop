@@ -3,6 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registro de Ventas</title>
+<!--  
 <link rel="stylesheet" href="/TiendaVirtualNewYork/F7.css" media="all" />
 <link rel="stylesheet" href="/TiendaVirtualNewYork/Titulo4.css"
 	media="all" />
@@ -13,7 +14,7 @@
 <link rel="stylesheet" href="/TiendaVirtualNewYork/calendar3.css" />
 <link rel="stylesheet" href="/TiendaVirtualNewYork/Formularios.css" />
 <link rel="shortcut icon" href="pp2.jpg">
-
+1-->
 
 <script>
 	function consultarCliente() {
@@ -156,90 +157,65 @@
 </script>
 </head>
 <body onload="consultarProducto()">
+	<h1 class="lines-effect">Registar Factura</h1>
+	<table>
+		<tr>
+			<td><label>CÃ©dula:</label><input type="number" id="txtIDcard">
+				&nbsp;&nbsp; &nbsp;&nbsp;</td>
+			<td><button class="button2" onclick="consultarCliente()">Consultar</button>
+				&nbsp;&nbsp; &nbsp;&nbsp;</td>
+			<td>Nombre:</td>
+			<td><label id="lbCliente"></label></td>
+			<td><div>&nbsp;&nbsp; | &nbsp;&nbsp;</div></td>
+			<td><label for="start">Fecha:</label></td>
+			<td><input type="date" id="start" name="trip-start"
+				value="2021-10-15" min="2021-01-01" max="2118-12-31"></td>
+		</tr>
+	</table>
 	<br></br>
 	<br></br>
-	<br></br>
-	<br></br>
-	<center>
-		<h1 class="lines-effect">Registar Factura</h1>
-	</center>
-	<br></br>
-	<br></br>
-	<br></br>
-	<br></br>
-	<div>
-		<center>
-			<label for="txtIDcard">Cédula:</label><input type="number"
-				class="fondo3" id="txtIDcard" name="PurchasePrice">
-			</td> &nbsp;&nbsp; &nbsp;&nbsp;
-			<button class="button2" onclick="consultarCliente()">Consultar</button>
-		</center>
-		&nbsp;&nbsp; &nbsp;&nbsp;
-	</div>
 
-<center>
-	<br></br>
-	<br></br>
-	<td><label id="lbCliente"></label></td>
-	<td><div>&nbsp;&nbsp;  &nbsp;&nbsp;</div></td>
-	<td><label for="start">Fecha:</label></td>
-	<td><input type="date" id="start" name="trip-start"
-		value="2021-10-21" min="2021-01-01" max="2118-12-31"></td>
-	<br></br>
-	<br></br>
-</center>
 	<br>
 	<br>
 	<table>
 		<tr>
-			<center>
-				<label>Cod. Producto</label>
-				
-				<br></br>
-				<br></br>
-				<label>Cantidad</label>
-				<!--  <td>Valor Total</td>-->
-			</center>
+			<td>Cod. Producto</td>
+			<td>Cantidad</td>
+			<td>Valor Total</td>
 
 		</tr>
 
 		<tr>
-<center>
+
 			<td><select id="sltProducts" onchange="updatePrice()"></select>
 			<td><input type="number" class="fondo3" id="txtCantidad"
 				name="PurchasePrice"></td>
 			<td><label id="lblTotal"></label></td>
-</center>
-<br></br>
-<br></br>
+
 		</tr>
 		<tr></tr>
 		<tr>
 			<td></td>
 			<td></td>
-			<center>
 			<td><label id="IVA"></label></td>
-			</center>
-			<center>
-			  <td>
-				<button onclick="totales()" class="button2">Calcular Total</button>
+			<td>
+				<button onclick="totales()" class="btnEffect1">Calcular
+					Total</button>
 		</tr>
-		</center>
-		<center>
+
 		<tr>
 			<td></td>
 			<td></td>
 			<td><label id="lblTOTAL"></label></td>
 			<td>
 		</tr>
-		</center>
+
 	</table>
 	<br></br>
-	<center>
-	<button onclick="sendData()" class="button2">Enviar Datos</button>
+	<button onclick="sendData()" class="btnEffect1">Enviar Datos</button>
 	<br></br>
 	<button
 		onclick="location.href='/TiendaVirtualNewYork/Reports&Sales/Menu.html'"
-		class="button">Reportes &amp; Ventas</button>
-	</center>
+		class="btnEffect3">Reportes &amp; Ventas</button>
+</body>
 </html>

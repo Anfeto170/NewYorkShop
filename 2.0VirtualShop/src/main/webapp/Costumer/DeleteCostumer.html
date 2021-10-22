@@ -4,14 +4,17 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Eliminar Cliente</title>
-<link rel="stylesheet" href="/TiendaVirtualNewYork/Titulo3.css"	media="all" />
-<link rel="stylesheet" href="/TiendaVirtualNewYork/TituloHumo16.css"	media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/Titulo3.css"
+	media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/TituloHumo16.css"
+	media="all" />
 <link rel="stylesheet" href="/TiendaVirtualNewYork/F7.css" media="all" />
-<link rel="stylesheet" href="/TiendaVirtualNewYork/Botones.css" media="all" />
-<link rel="stylesheet" href="/TiendaVirtualNewYork/EstiloTabla6.css" media="all" />
-<link rel="shortcut icon" href="pp2.jpg">	
+<link rel="stylesheet" href="/TiendaVirtualNewYork/Botones.css"
+	media="all" />
+<link rel="stylesheet" href="/TiendaVirtualNewYork/EstiloTabla6.css"
+	media="all" />
+<link rel="shortcut icon" href="pp2.jpg">
 <script>
-
 	function sendData() {
 		var valido = validate();
 		if (valido) {
@@ -65,32 +68,33 @@
 	<br></br>
 	<br></br>
 	<br></br>
-    <center>
-    <h1>Sección de eliminar clientes</h1>
-    </center>
-    <br></br>
-	<br></br>
+	<center>
+		<h1>Sección de eliminar clientes</h1>
+	</center>
+
 	<br></br>
 	<br></br>
 	<center>
-		 <!--  El mï¿½todo post, hace que se ejectu get pero no muestra nada en URL -->
-		<td><label for="txtIDcard">Cédula del Cliente que se va a eliminar:</label></td>
-			<td><input type="number" class="fondo1" id="txtIDcard" name="IDcard"></td>
-	</center>	
+		<!--  El mï¿½todo post, hace que se ejectu get pero no muestra nada en URL -->
+		<td><label for="txtIDcard">Cédula del Cliente que se va a
+				eliminar:</label></td>
+		<td><input type="number" class="fondo1" id="txtIDcard"
+			name="IDcard"></td>
+	</center>
 	<br></br>
-    <br></br>
-    <br></br>
-<center>
-<a href="#" class="button2" onclick="sendData()">Eliminar Cliente</a>
-<br></br>
-<label id="confirmation"></label>
-</center>
-<br></br>
-<br></br>
-<center>
-<a href="#" class="button" onclick="location.href='/TiendaVirtualNewYork/Costumer/Menu.html'">Menú Cliente</a>
-</center>	    
-    <!--  
+	<br></br>
+	<center>
+		<a href="#" class="button2" onclick="sendData()">Eliminar Cliente</a>
+		<br></br> <label id="confirmation"></label>
+	</center>
+	<br></br>
+	<br></br>
+	<center>
+		<a href="#" class="button"
+			onclick="location.href='/TiendaVirtualNewYork/Costumer/Menu.html'">Menú
+			Cliente</a>
+	</center>
+	<!--  
 			<button onclick="sendData()" class="btnEffect1">Eliminar Usuario</button>
 		<br></br>
 	    <br></br>
@@ -99,93 +103,89 @@
 		</center>-->
 
 
-<link rel="stylesheet" href="/TiendaVirtualNewYork/Designxd.css" media="all" />
-		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
+	<link rel="stylesheet" href="/TiendaVirtualNewYork/Designxd.css"
+		media="all" />
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css'
+		rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 </body>
-	<div class="sidebar">
-		<div class="logo_content">
-			<div class="logo">
-				<i class='bx bxl-c-plus-plus'></i>
-				<div class="logo_name">JKServices</div>
-			</div>
-			<i class='bx bx-menu' id="btn" ></i>
-		</div>	
-		<ul class="nav_list">
-			<li>
-				<a href="#">
-					<i class='bx bx-food-menu'></i>
-					<span class="links_name">Opciones Para:</span>
-				</a>
-				 <span class="tooltip">Mis Archivos</span>   
-			 </li>
-			<li>
-				<a href="#">
-					<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/Menu.html'" class='bx bx-user'></i>
-					<span onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/Menu.html'" class="links_name">Usuarios</span>
-				</a>
-				 <span class="tooltip">Usuarios</span>  
-			</li>
-			<li>
-				<a hreh="#">
-					<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Costumer/Menu.html'" class='bx bx-group'></i>
-					<span onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Costumer/Menu.html'" class="links_name">Clientes</span>
-				</a>
-				 <span class="tooltip">Clientes</span>  
-			</li>
-			<li>
-				<a hreh="#">
-					<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Supplier/Menu.html'" class='bx bx-briefcase' ></i>					
-					<span onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Supplier/Menu.html'" class="links_name">Proveedores</span>
-				</a>
-				 <span class="tooltip">Proveedores</span>  
-			</li>
-			<li>
-				<a hreh="#">
-					<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Product/Menu.html'" class='bx bx-gift' ></i>
-					<span onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Product/Menu.html'" class="links_name">Productos</span>
-				</a>
-				 <span class="tooltip">Productos</span>  
-			</li>
-			<li>
-			<a hreh="#"> 
-				<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Reports&Sales/Menu.html'" class='bx bx-bar-chart-alt-2'></i> 
-				<span onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Reports&Sales/Menu.html'" class="links_name">Reportes & Ventas</span>
-			</a> 
-				<span class="tooltip">Estadisticas</span></li>
-				<div class="profile_content">
+<div class="sidebar">
+	<div class="logo_content">
+		<div class="logo">
+			<i class='bx bxl-c-plus-plus'></i>
+			<div class="logo_name">JKServices</div>
+		</div>
+		<i class='bx bx-menu' id="btn"></i>
+	</div>
+	<ul class="nav_list">
+		<li><a href="#"> <i class='bx bx-food-menu'></i> <span
+				class="links_name">Opciones Para:</span>
+		</a> <span class="tooltip">Mis Archivos</span></li>
+		<li><a href="#"> <i
+				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/Menu.html'"
+				class='bx bx-user'></i> <span
+				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/Menu.html'"
+				class="links_name">Usuarios</span>
+		</a> <span class="tooltip">Usuarios</span></li>
+		<li><a hreh="#"> <i
+				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Costumer/Menu.html'"
+				class='bx bx-group'></i> <span
+				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Costumer/Menu.html'"
+				class="links_name">Clientes</span>
+		</a> <span class="tooltip">Clientes</span></li>
+		<li><a hreh="#"> <i
+				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Supplier/Menu.html'"
+				class='bx bx-briefcase'></i> <span
+				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Supplier/Menu.html'"
+				class="links_name">Proveedores</span>
+		</a> <span class="tooltip">Proveedores</span></li>
+		<li><a hreh="#"> <i
+				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Product/Menu.html'"
+				class='bx bx-gift'></i> <span
+				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Product/Menu.html'"
+				class="links_name">Productos</span>
+		</a> <span class="tooltip">Productos</span></li>
+		<li><a hreh="#"> <i
+				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Reports&Sales/Menu.html'"
+				class='bx bx-bar-chart-alt-2'></i> <span
+				onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/Reports&Sales/Menu.html'"
+				class="links_name">Reportes & Ventas</span>
+		</a> <span class="tooltip">Estadisticas</span></li>
+		<div class="profile_content">
 			<div class="profile">
 				<div class="profile_details">
 					<div class="name_job">
-					<img src="pp.jpg" alt="">
+						<img src="pp.jpg" alt="">
 						<div class="name">Juan López</div>
 						<div class="job">Diseño Web</div>
 					</div>
 				</div>
-				<i onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/LoginVista.html'" class='bx bx-log-out' id="log_out" ></i>
-				<span class="tooltip">Salir</span></li>
+				<i
+					onclick="location.href='http://localhost:8080/TiendaVirtualNewYork/User/LoginVista.html'"
+					class='bx bx-log-out' id="log_out"></i> <span class="tooltip">Salir</span>
+				</li>
 			</div>
 		</div>
-	</div>
-	<div class="home_content">
-		<div class="text"></div>
-	</div>
-	
-	<script>
+</div>
+<div class="home_content">
+	<div class="text"></div>
+</div>
+
+<script>
 	let btn = document.querySelector("#btn");
 	let sidebar = document.querySelector(".sidebar");
 	let searchBtn = document.querySelector(".bx-search");
-	
+
 	btn.onclick = function() {
 		sidebar.classList.toggle("active");
 	}
 	searchBtn.onclick = function() {
 		sidebar.classList.toggle("active");
 	}
-		</script>			
-	</body>		
-	</html>
+</script>
+</body>
+</html>
 <!--  
 <font face="Comic Sans MS,arial">
 
