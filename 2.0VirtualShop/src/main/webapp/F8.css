@@ -1,0 +1,19 @@
+body{
+	
+background-image: url("F7v.jpg");
+  background-position: 7% 7%;
+
+  /* Esta imagen no debe de repetirse */
+  background-repeat: no-repeat;
+
+  /* COn esta regla fijamos la imagen en la pantalla. */
+  background-attachment: fixed;
+
+  /* La imagen ocupa el 100% y se reescala */
+  background-size: cover;
+
+  /* Damos un color de fondo mientras la imagen está cargando  */
+  background-color: #464646;
+  
+
+}
